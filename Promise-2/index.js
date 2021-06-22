@@ -17,4 +17,4 @@ function asyncNumberChecker(n) {
 asyncNumberChecker(10).catch(err => {console.log(err)})
 
 
-// asyncNumberChecker(5).then(res => {console.log(res)})
+asyncNumberChecker(5).then(res => {console.log(res)})

@@ -35,9 +35,12 @@ greet('Your name') // Returns a Promise
 
 // Challenges: get greet() to fail by passing a non string value
 // What happens? 
+greet(999).catch(err => console.log(err))
 
 // Challenge: get uppercaser() to fail by passing a non string value
-// What happens? 
+// What happens?
+uppercaser(999).catch(err => console.log(err))
 
 // Challenge: Notice there is only a single .catch() at the end. 
 // Explain the behavior?
+// catch will catch an error and do something if an error appears, there is no need to execute more than one error
