@@ -17,27 +17,21 @@ function onerror(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-navigator.geolocation.getCurrentPosition(onsuccess, onerror, options);
-// navigator.geolocation( successCallback, errorCallback, options )
-
-// navigator.geolocation((pos) => {
-//   // 
-// }, (err) => {
-//   // 
-// }, {})
-
 
 // Challenge: Make this work: 
-
-function getGeolocation(options) {
-  return new Promise( (resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options);
-  } )
+function geolocate(options){
+ return new Promise((resolve, reject) => {
+  navigator.geolocation.getCurrentPosition((pos) => {
+    resolve(pos)
+  }, (err) => {
+    reject(err)
+  }, options)
+ })
 }
 
 // Like this: 
 
-getGeolocation(options)
-  .then(pos => { })
-  .catch(err => { })
+geolocate(options)
+  .then(res => onsuccess(res))
+  .catch(err => onerror(err))
 
