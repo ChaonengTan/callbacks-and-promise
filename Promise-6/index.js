@@ -13,3 +13,6 @@ whatToEat('lunch')
 
 // If the `timeOfDay` is anything else reject the promise with 
 // the 'message' I'm not hungry right now.  
+
+
+// note: this is the same as promise 5
