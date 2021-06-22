@@ -1,5 +1,5 @@
 const food = new Promise((resolve, reject) => {
-  
+    resolve ('pizza')
 })
 
 
@@ -12,3 +12,4 @@ const food = new Promise((resolve, reject) => {
 
 // **Challenge 2** Resolve the `food` promise with that `.then()` syntax 
 // and print your favorite food to the console. 
+food.then(res => console.log(res))
